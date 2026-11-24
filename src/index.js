@@ -1,12 +1,11 @@
+// Load .env first: ES module imports are evaluated before the file body,
+// so this must be an import (not a dotenv.config() call) to run before app-config.js.
+import "dotenv/config";
 import { Ticker } from "./ticker.js";
 import { createCanvas, registerFont, ImageData } from "canvas";
 import fs from "node:fs";
 import path from "node:path";
-import dotenv from "dotenv";
 import { Worker } from "worker_threads";
-
-// Load environment variables
-dotenv.config();
 
 import { FPS, LAYOUT } from "./settings.js";
 import { Display } from "@owowagency/flipdot-emu";

@@ -10,8 +10,9 @@ const devConfig = {
 // Music service configuration
 const musicServiceConfig = {
     spotify: {
-        clientId: process.env.SPOTIFY_CLIENT_ID || 'fd6e514207fd419b9c81f19c602f250d',
-        clientSecret: process.env.SPOTIFY_CLIENT_SECRET || '21fbb679b9404c96a7a4fad2149cf034',
+        // Never hard-code credentials here: this file is committed. Set them in .env.
+        clientId: process.env.SPOTIFY_CLIENT_ID,
+        clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
         redirectUri: process.env.SPOTIFY_REDIRECT_URI || 'http://127.0.0.1:3000/auth/spotify/callback',
         scopes: ['user-read-playback-state', 'user-modify-playback-state', 'user-read-currently-playing']
     }
